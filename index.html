@@ -2,22 +2,14 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>Hello TWPR</title>
+  <title>首頁 | TWPR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/style.css">
-  <style>
-    /* 額外強化內容位置在畫面中置中 */
-    .content {
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- ☰ 漢堡按鈕 -->
   <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
-  <!-- 側邊選單 -->
   <div class="sidebar" id="sidebar">
     <h2>TWPR選單</h2>
     <a href="index.html">首頁</a>
@@ -27,7 +19,6 @@
     <a href="#">聯絡我們</a>
   </div>
 
-  <!-- 主內容 -->
   <div class="content">
     <h1>網站部署成功！</h1>
     <h2>TWPR 網站已更新</h2>
@@ -37,13 +28,11 @@
     </a>
   </div>
 
-  <!-- 切換選單 -->
   <script>
     function toggleSidebar() {
       document.getElementById("sidebar").classList.toggle("show");
     }
 
-    // 自動高亮目前頁面選單
     const links = document.querySelectorAll(".sidebar a");
     links.forEach(link => {
       if (link.href === window.location.href) {
