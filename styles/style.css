@@ -4,10 +4,9 @@ body {
   background-color: #f9fafb;
 }
 
-/* ☰ 漢堡按鈕 */
 .menu-btn {
   font-size: 28px;
-  background: none;
+  background: #2c3e50;
   border: none;
   color: white;
   cursor: pointer;
@@ -16,10 +15,8 @@ body {
   top: 0;
   left: 0;
   z-index: 1002;
-  background-color: #2c3e50;
 }
 
-/* 側邊欄 */
 .sidebar {
   position: fixed;
   top: 0;
@@ -60,7 +57,6 @@ body {
   font-weight: bold;
 }
 
-/* 黑色遮罩 */
 .overlay {
   position: fixed;
   top: 0;
@@ -76,13 +72,17 @@ body {
   display: block;
 }
 
-/* 主內容 */
 .content {
   padding: 80px 40px 40px 40px;
   max-width: 800px;
   margin: auto;
   line-height: 1.8;
   color: #2c3e50;
+  transition: transform 0.3s ease;
+}
+
+.content.shift-right {
+  transform: translateX(220px);
 }
 
 .content h1 {
@@ -97,11 +97,9 @@ body {
 }
 
 .content ul {
-  text-align: left;
   padding-left: 20px;
 }
 
-/* 下載按鈕 */
 .download-button {
   background-color: #3498db;
   color: white;
@@ -118,7 +116,6 @@ body {
   background-color: #2980b9;
 }
 
-/* 電腦版側欄固定 */
 @media (min-width: 768px) {
   .sidebar {
     left: 0;
@@ -138,8 +135,11 @@ body {
 
   .content {
     margin-left: 220px;
+    transform: none !important;
   }
 }
+
+/* 入場動畫 */
 @keyframes fadeSlideUp {
   0% {
     opacity: 0;
@@ -152,6 +152,7 @@ body {
 }
 
 .fade-in-title {
+  opacity: 0;
   animation: fadeSlideUp 1s ease-out forwards;
+  animation-delay: 0.2s;
 }
-
