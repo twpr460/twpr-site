@@ -1,80 +1,9 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <title>檔案下載 | TWPR</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* 同 index.html 的 CSS */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
-      background-color: #f2f4f8;
-      display: flex;
-      min-height: 100vh;
-    }
-
-    .sidebar {
-      width: 220px;
-      background-color: #2c3e50;
-      color: white;
-      padding-top: 40px;
-      flex-shrink: 0;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-    }
-
-    .sidebar h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 1.5em;
-    }
-
-    .sidebar a {
-      display: block;
-      padding: 14px 20px;
-      color: white;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    .sidebar a:hover {
-      background-color: #34495e;
-    }
-
-    .sidebar a.active {
-      background-color: #1abc9c;
-      font-weight: bold;
-    }
-
-    .content {
-      flex-grow: 1;
-      padding: 40px;
-      text-align: center;
-    }
-
-    .download-button {
-      background-color: #3498db;
-      color: white;
-      padding: 12px 24px;
-      font-size: 1em;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-    }
-
-    .download-button:hover {
-      background-color: #2980b9;
-    }
-  </style>
-</head>
 <body>
+  <!-- ☰ 選單按鈕 -->
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
   <!-- 側邊選單 -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <h2>TWPR選單</h2>
     <a href="index.html">首頁</a>
     <a href="#">介紹</a>
@@ -92,8 +21,14 @@
     </a>
   </div>
 
-  <!-- 自動高亮選單 -->
+  <!-- JS 控制滑動與高亮 -->
   <script>
+    // 點擊 ☰ 按鈕 → 開關側邊欄
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("show");
+    }
+
+    // 自動高亮當前頁面連結
     const links = document.querySelectorAll(".sidebar a");
     links.forEach(link => {
       if (link.href === window.location.href) {
@@ -101,6 +36,4 @@
       }
     });
   </script>
-
 </body>
-</html>
