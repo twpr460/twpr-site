@@ -5,21 +5,53 @@
   <title>檔案下載 | TWPR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* 同 index.html 的 CSS */
     body {
+      margin: 0;
       font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
       background-color: #f2f4f8;
-      margin: 0;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #2c3e50;
+      color: white;
+      padding-top: 40px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.5em;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e;
+    }
+
+    .sidebar a.active {
+      background-color: #1abc9c;
+      font-weight: bold;
+    }
+
+    .content {
+      flex-grow: 1;
       padding: 40px;
       text-align: center;
-    }
-
-    h1 {
-      color: #2c3e50;
-    }
-
-    p {
-      font-size: 1.2em;
-      color: #555;
     }
 
     .download-button {
@@ -40,10 +72,35 @@
   </style>
 </head>
 <body>
-  <h1>檔案下載</h1>
-  <p>請點下方按鈕下載 DNS 設定檔案：</p>
-  <a href="/files/DNS.zip" download>
-    <button class="download-button">下載 DNS.zip</button>
-  </a>
+
+  <!-- 側邊選單 -->
+  <div class="sidebar">
+    <h2>TWPR選單</h2>
+    <a href="index.html">首頁</a>
+    <a href="#">介紹</a>
+    <a href="#">教學</a>
+    <a href="download.html">檔案下載</a>
+    <a href="#">聯絡我們</a>
+  </div>
+
+  <!-- 主內容 -->
+  <div class="content">
+    <h1>檔案下載</h1>
+    <p>請點下方按鈕下載 DNS 設定檔案：</p>
+    <a href="/files/DNS.zip" download>
+      <button class="download-button">下載 DNS.zip</button>
+    </a>
+  </div>
+
+  <!-- 自動高亮選單 -->
+  <script>
+    const links = document.querySelectorAll(".sidebar a");
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+
 </body>
 </html>
