@@ -8,8 +8,10 @@
 </head>
 <body>
 
+  <!-- ☰ 漢堡選單按鈕 -->
   <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
+  <!-- 側邊選單 -->
   <div class="sidebar" id="sidebar">
     <h2>TWPR選單</h2>
     <a href="index.html">首頁</a>
@@ -19,8 +21,22 @@
     <a href="#">聯絡我們</a>
   </div>
 
+  <!-- 主內容 -->
+  <div class="content">
+    <h1>TWPR.link</h1>
+    <h2>我可以在這找到什麼？</h2>
+    <p>
+      歡迎來到 <strong>TWPR.link</strong>，這裡提供您網站與伺服器建置的實用工具與服務，包括：
+    </p>
+    <ul style="text-align: left; max-width: 700px; margin: 0 auto; line-height: 1.8;">
+      <li>✅ 自訂 <strong>DNS 設定檔</strong>，方便網域指向與管理</li>
+      <li>✅ <strong>Minecraft 伺服器租借</strong>（支援 Cloudflare 穿透、自訂網域）</li>
+      <li>✅ 提供 <strong>各類遊戲伺服器</strong>（如 Terraria、ARK、Valheim 等）快速架設</li>
+      <li>✅ 教學資源、影片、腳本工具與自動化部署協助</li>
+    </ul> 
+  </div>
 
-
+  <!-- JS 控制 -->
   <script>
     function toggleSidebar() {
       document.getElementById("sidebar").classList.toggle("show");
