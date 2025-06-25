@@ -3,13 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <title>Hello TWPR</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+      background-color: #f2f4f8;
+      color: #333;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #2c3e50;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #2980b9;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+
+    .download-button {
+      background-color: #3498db;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .download-button:hover {
+      background-color: #2980b9;
+    }
+  </style>
 </head>
 <body>
+
   <h1>網站部署成功！</h1>
-  <h2>TWPR 網站已更新</h1>
+  <h2>TWPR 網站已更新</h2>
   <p>這是第二版內容</p>
+
   <a href="/files/DNS.zip" download>
-  <button>下載</button>
-</a>
+    <button class="download-button">下載 DNS 檔案</button>
+  </a>
+
 </body>
 </html>
+
