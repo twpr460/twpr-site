@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <title>首頁 | TWPR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ☰ 按鈕 -->
+  <!-- ☰ 漢堡選單按鈕 -->
   <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
-  <!-- 側邊選單 -->
+  <!-- 側邊欄 -->
   <div class="sidebar" id="sidebar">
     <h2>TWPR選單</h2>
     <a href="index.html">首頁</a>
@@ -21,21 +21,18 @@
     <a href="#">聯絡我們</a>
   </div>
 
-  <!-- 黑色遮罩背景 -->
+  <!-- 遮罩 -->
   <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
   <!-- 主內容 -->
   <div class="content" id="mainContent">
     <h1 class="fade-in-title">TWPR.link</h1>
     <h2>我可以在這找到什麼？</h2>
-    <p>
-      歡迎來到 <strong>TWPR.link</strong>
-    </p>
     <ul>
-      <li> 免費或自訂 <strong>DNS 設定檔</strong>，方便網域指向與管理</li>
-      <li> <strong>Minecraft 伺服器租借</strong>（支援 Cloudflare 穿透、自訂網域）</li>
-      <li> 各類遊戲伺服器（如 Terraria、ARK、Valheim 等）快速架設</li>
-      <li> 教學資源、影片、腳本工具與自動化部署協助</li>
+      <li><strong>DNS 設定檔</strong> 自訂、指向、管理</li>
+      <li><strong>Minecraft 伺服器</strong> 支援 Cloudflare、自訂網域</li>
+      <li><strong>各類遊戲伺服器</strong> 快速部署（ARK、Valheim...）</li>
+      <li><strong>教學資源</strong>、腳本工具、部署協助</li>
     </ul>
     <a href="/files/DNS.zip" download>
       <button class="download-button">下載 DNS 設定檔</button>
@@ -46,11 +43,14 @@
     function toggleSidebar() {
       const sidebar = document.getElementById("sidebar");
       const overlay = document.getElementById("overlay");
+      const content = document.getElementById("mainContent");
+
       sidebar.classList.toggle("show");
       overlay.classList.toggle("show");
+      content.classList.toggle("shift-right");
     }
 
-    // 高亮目前選單
+    // 高亮目前頁面
     const links = document.querySelectorAll(".sidebar a");
     links.forEach(link => {
       if (link.href === window.location.href) {
