@@ -82,7 +82,7 @@ body {
   margin: auto;
   line-height: 1.8;
   color: #2c3e50;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, margin-left 0.3s ease;
 }
 
 .content.shift-right {
@@ -121,7 +121,7 @@ body {
   background-color: #2980b9;
 }
 
-/* 響應式設計（電腦版側邊欄固定） */
+/* 電腦版側邊欄常駐 */
 @media (min-width: 768px) {
   .sidebar {
     left: 0;
