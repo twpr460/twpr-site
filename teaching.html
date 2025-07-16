@@ -4,9 +4,187 @@
   <meta charset="UTF-8" />
   <title>教學 | TWPR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/style.css">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+    }
+
+    .menu-btn {
+      font-size: 28px;
+      background: #2c3e50;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 16px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1002;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -240px;
+      width: 220px;
+      height: 100%;
+      background-color: #2c3e50;
+      color: white;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1001;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      font-size: 1.4em;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e;
+    }
+
+    .sidebar a.active {
+      background-color: #1abc9c;
+      font-weight: bold;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      display: none;
+      z-index: 1000;
+    }
+
+    .overlay.show {
+      display: block;
+    }
+
+    .content {
+      padding: 80px 20px 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      line-height: 1.8;
+      color: #2c3e50;
+      transition: transform 0.3s ease;
+    }
+
+    .content.shift-right {
+      transform: translateX(220px);
+    }
+
+    h1.fade-in-title {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #34495e;
+      opacity: 0;
+      animation: fadeSlideUp 1s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    h2.fade-in-sub {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 30px;
+      color: #34495e;
+      opacity: 0;
+      animation: fadeSlideUp 1s ease-out forwards;
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .teaching-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 800px;
+      transition: transform 0.2s;
+    }
+
+    .teaching-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .teaching-card h3 {
+      color: #2c3e50;
+      margin-top: 20px;
+    }
+
+    .teaching-card ul {
+      padding-left: 20px;
+    }
+
+    .video-link a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .video-link a:hover {
+      background-color: #2980b9;
+    }
+
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+      .sidebar.show {
+        left: 0;
+      }
+      .menu-btn {
+        display: none;
+      }
+      .overlay {
+        display: none !important;
+      }
+      .content {
+        margin-left: 220px;
+        transform: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
