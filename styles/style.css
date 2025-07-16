@@ -187,3 +187,107 @@ body {
   animation: fadeSlideUp 1s ease-out forwards;
   animation-fill-mode: forwards;
 }
+.contact-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: left;
+  animation: fadeSlideUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.contact-card p {
+  font-size: 1.2em;
+  margin: 12px 0;
+  color: #2c3e50;
+}
+
+.contact-card strong {
+  color: #1abc9c;
+}
+.teaching-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 32px 24px;
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: left;
+  animation: fadeSlideUp 0.8s ease forwards;
+  opacity: 0;
+  line-height: 1.8;
+  color: #2c3e50;
+}
+
+.teaching-card h3 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 1.4em;
+  color: #1abc9c;
+}
+
+.teaching-card p,
+.teaching-card li {
+  font-size: 1.1em;
+}
+
+.teaching-card ul {
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.video-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.video-link a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1abc9c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.video-link a:hover {
+  background-color: #16a085;
+}
+.introduce-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 32px 24px;
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: left;
+  animation: fadeSlideUp 0.8s ease forwards;
+  opacity: 0;
+  line-height: 1.8;
+  color: #2c3e50;
+}
+
+.introduce-card h3 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 1.4em;
+  color: #1abc9c;
+}
+
+.introduce-card p,
+.introduce-card li {
+  font-size: 1.1em;
+}
+
+.introduce-card ul {
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+
+
