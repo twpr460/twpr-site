@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>介紹 | TWPR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <!-- ☰ 漢堡選單按鈕 -->
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+  <!-- 側邊欄 -->
+  <div class="sidebar" id="sidebar">
+    <h2>TWPR選單</h2>
+    <a href="index.html">首頁</a>
+    <a href="introduce.html">介紹</a>
+    <a href="teaching.html">教學</a>
+    <a href="download.html">檔案下載</a>
+    <a href="contact.html">聯絡我們</a>
+  </div>
+
+  <!-- 遮罩 -->
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- 主內容 -->
+  <div class="content" id="mainContent">
+    <h1 class="fade-in-title">TWPR.link 介紹</h1>
+    <div class="introduce-card">
+      <p>這是一個 <strong>自動 DNS 隧道更新工具</strong>。</p>
+      <p>專為「家用網路或 VPS 沒有公網 IP」設計的小工具，能夠 <strong>一鍵開啟 ngrok TCP 隧道</strong>，並自動把你的自訂網域名稱指向到 ngrok 公開地址。</p>
+
+      <h3>這有什麼用？</h3>
+      <ul>
+        <li>✅ 自動啟動 ngrok TCP 隧道</li>
+        <li>✅ 不只適用於 Minecraft 伺服器，還能用於任何 TCP 服務，像是：
+          <ul>
+            <li>遊戲伺服器（Minecraft、Valheim、Terraria、Rust...）</li>
+            <li>私人網站、API、Socket 服務</li>
+            <li>任何需要在家用網路後端打洞、想用自己域名對外的服務</li>
+          </ul>
+        </li>
+        <li>✅ 你的朋友可以直接用你自訂的網域來連線</li>
+        <li>✅ 不需要知道 ngrok 的複雜地址</li>
+      </ul>
+
+      <h3>主要解決的問題</h3>
+      <ul>
+        <li>🏠 沒有固定公網 IP 的家用網路</li>
+        <li>🏢 社區大樓 NAT 內網</li>
+        <li>🌐 想用自己的專屬網域來分享連線地址</li>
+      </ul>
+
+      <h3>誰適合使用？</h3>
+      <ul>
+        <li>🎮 私人伺服器經營者</li>
+        <li>👥 小型遊戲社群</li>
+        <li>🧑‍💻 教學或開發者想快速分享測試服務</li>
+        <li>💰 不想買 VPS 又想用自己的網域名稱</li>
+      </ul>
+    </div>
+
+    <div class="introduce-card">
+      <h2>專業 DNS 轉發 / IP 指向服務</h2>
+      <p>想把自己的網域名稱解析到指定 IP？<br>
+         或是伺服器 IP 不固定想要固定？<br>
+         我們提供快速、專業的 DNS 轉發服務，讓你的網域隨時指向目標伺服器。<br>
+         就算 IP 不同，只要配合我們的工具都可以固定。</p>
+
+      <ul>
+        <li>✅ 自訂網域 → 專屬 IP</li>
+        <li>✅ 適用網站、遊戲伺服器、應用程式</li>
+        <li>✅ 穩定解析，快速生效</li>
+      </ul>
+
+      <h3>服務內容</h3>
+      <ul>
+        <li>✅ DNS A/AAAA/CNAME 記錄設定</li>
+        <li>✅ IP 轉發與解析管理</li>
+        <li>✅ 可協助 Cloudflare 等代管平台設定</li>
+        <li>✅ 後續解析修改支援</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const content = document.getElementById("mainContent");
+
+      sidebar.classList.toggle("show");
+      overlay.classList.toggle("show");
+      content.classList.toggle("shift-right");
+    }
+
+    // 自動高亮目前頁面連結
+    const links = document.querySelectorAll(".sidebar a");
+    links.forEach(link => {
+      if (link.href.split('/').pop() === window.location.pathname.split('/').pop()) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>聯絡我們 | TWPR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <!-- ☰ 漢堡選單按鈕 -->
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+  <!-- 側邊欄 -->
+  <div class="sidebar" id="sidebar">
+    <h2>TWPR選單</h2>
+    <a href="index.html">首頁</a>
+    <a href="introduce.html">介紹</a>
+    <a href="teaching.html">教學</a>
+    <a href="download.html">檔案下載</a>
+    <a href="contact.html">聯絡我們</a>
+  </div>
+
+  <!-- 遮罩 -->
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- 主內容 -->
+  <div class="content" id="mainContent">
+    <h1 class="fade-in-title">還是不知道怎麼用？或是需要購買？</h1>
+    <h2 class="fade-in-sub">聯絡我</h2>
+
+    <div class="contact-card">
+      <p><strong>Discord ID：</strong> siccum</p>
+      <p><strong>LINE ID：</strong> 941910288</p>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const content = document.getElementById("mainContent");
+
+      sidebar.classList.toggle("show");
+      overlay.classList.toggle("show");
+      content.classList.toggle("shift-right");
+    }
+
+    // 自動高亮目前頁面連結
+    const links = document.querySelectorAll(".sidebar a");
+    links.forEach(link => {
+      if (link.href.split('/').pop() === window.location.pathname.split('/').pop()) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+
+</body>
+</html>
