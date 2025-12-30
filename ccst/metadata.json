@@ -1,0 +1,5 @@
+{
+  "name": "CCST Networking Exam Prep",
+  "description": "A comprehensive practice exam web application for CCST Networking candidates, featuring all questions from the provided mock exam PDF, including single choice, multiple choice, true/false matrices, and scenario-based questions.",
+  "requestFramePermissions": []
+}
